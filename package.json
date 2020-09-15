@@ -1,0 +1,31 @@
+{
+  "name": "node-js-course",
+  "version": "0.1.0",
+  "description": "Telegram clone",
+  "main": "server.js",
+  "scripts": {
+    "serve": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/d-alanis98/node-js-course.git"
+  },
+  "keywords": [
+    "chat",
+    "telegram",
+    "server",
+    "node"
+  ],
+  "author": "Damian Alanis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/d-alanis98/node-js-course/issues"
+  },
+  "homepage": "https://github.com/d-alanis98/node-js-course#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.10.5"
+  }
+}
