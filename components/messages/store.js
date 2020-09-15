@@ -2,7 +2,7 @@ const db = require('mongoose');
 const Model = require('./model');
 
 db.Promise = global.Promise;
-db.connect('mongodb://db_user:7hQJkgw3fnd2Tay@cluster0-shard-00-00.skk4e.mongodb.net:27017,cluster0-shard-00-01.skk4e.mongodb.net:27017,cluster0-shard-00-02.skk4e.mongodb.net:27017/<dbname>?ssl=true&replicaSet=atlas-vuaneb-shard-0&authSource=admin&retryWrites=true&w=majority', {
+db.connect(process.env.DB_CONNECTION, {
     useNewUrlParser: true,
 });
 
