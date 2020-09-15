@@ -1,12 +1,5 @@
-const db = require('mongoose');
 const Model = require('./model');
 
-db.Promise = global.Promise;
-db.connect(process.env.DB_CONNECTION, {
-    useNewUrlParser: true,
-});
-
-console.log('[db] Connected successfully');
 
 const addMessage = message => {
     const myMessage = new Model(message);
