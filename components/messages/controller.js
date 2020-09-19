@@ -1,5 +1,6 @@
-const multer = require('multer');
 const store = require('./store');
+//Socket instance
+const { socket } = require('../../socket');
 //Response facade
 const response = require('../../network/response');
 
@@ -23,6 +24,7 @@ const addMessage = (req, res) => {
     }
 
     store.add(newUserMessage);
+    socket.io.emit('message', newUserMessage);
     return response.success(req, res, 201, newUserMessage);
 }
 
