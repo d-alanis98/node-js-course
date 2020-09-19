@@ -1,16 +1,25 @@
+const multer = require('multer');
+const store = require('./store');
 //Response facade
 const response = require('../../network/response');
-const store = require('./store');
 
 const addMessage = (req, res) => {
-    const { user, message } = req.body;
-    if(!user || !message) {
+    const { 
+        body: { user, chat, message },
+        file
+     } = req;
+    if(!user || !chat || !message) {
         return response.error(req, res, 400, 'All fields are required');
     }
+    let fileUrl = '';
+    if(file)
+        fileUrl = `/app/files/${file.filename}`
     const newUserMessage = {
         user,
+        chat,
         message,
-        time: Date.now()
+        time: Date.now(),
+        file: fileUrl
     }
 
     store.add(newUserMessage);
